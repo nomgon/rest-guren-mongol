@@ -7,8 +7,7 @@ exports.protect = asyncHandler(async (req, res, next) => {
   let token = null;
   if (req.headers.authorization) {
     token = req.headers.authorization.split(" ")[1];
-  } 
-  else if (req.cookies) {
+  } else if (req.cookies) {
     token = req.cookies["amazon-token"];
   }
   if (!token) {
